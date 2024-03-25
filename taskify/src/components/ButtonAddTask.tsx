@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  Center,
-  Grid,
-  GridItem,
-  Input,
-  Table,
-} from "@chakra-ui/react";
+import { Box, Button, Center, Grid, GridItem, Input } from "@chakra-ui/react";
+
+import CardTask from "./Cardtask.tsx";
 
 const ButtonAddTask = () => {
   const [task, setTask] = React.useState<string[]>([]);
@@ -33,11 +27,17 @@ const ButtonAddTask = () => {
             </Button>
           </Box>
         </Center>
-        <Table>
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="space-between"
+          marginTop="20px"
+          gap="15px"
+        >
           {task.map((tarefa, index) => (
-            <li key={index}>{tarefa}</li>
+            <CardTask key={index} tarefa={tarefa} />
           ))}
-        </Table>
+        </Box>
       </GridItem>
     </Grid>
   );

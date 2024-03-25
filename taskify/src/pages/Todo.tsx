@@ -5,16 +5,20 @@ import ButtonAddTask from "../components/ButtonAddTask";
 const Todo = () => {
   return (
     <Grid h="100vh" templateColumns="1fr" placeContent="center">
-      <GridItem>
+      <GridItem
+        boxShadow="lg"
+        p="6"
+        rounded="md"
+        bg="white"
+        placeSelf="center"
+        w="500px"
+      >
         <Center>
-          <Grid templateRows="repeat(4, 1fr)" gap="80px">
+          <Grid display="flex" flexDirection="column">
             <GridItem>
               <Box display="flex" gap="10px">
                 <ButtonAddTask />
               </Box>
-            </GridItem>
-            <GridItem>
-              <Box></Box>
             </GridItem>
           </Grid>
         </Center>
